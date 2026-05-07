@@ -330,7 +330,7 @@ video {
       <div class="media-wrapper">
 
         <img
-          src="media/image1.jpg"
+          src="CP_9760_South_Willsboro.jpg"
           alt="Example"
         >
 
