@@ -226,7 +226,7 @@ p {
 
   h2 {
 
-    font-size: clamp(1.2rem, 5vw, 2rem);
+   font-size: clamp(1rem, 2vw, 1.7rem);
   }
 
   p {
