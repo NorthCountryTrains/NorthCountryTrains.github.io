@@ -1,13 +1,16 @@
 # NorthCountryTrains.github.io
 
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+/>
 
-<title>Snap Scroll Multimedia Page</title>
+<title>Responsive Snap Scroll</title>
 
 <style>
 
@@ -19,7 +22,13 @@
   box-sizing: border-box;
 }
 
-/* GLOBAL */
+/* DYNAMIC MOBILE HEIGHT */
+
+:root {
+  --vh: 1vh;
+}
+
+/* PAGE */
 
 html,
 body {
@@ -27,32 +36,34 @@ body {
   height: 100%;
   overflow: hidden;
 
-  font-family: Arial, sans-serif;
   background: black;
-  color: white;
+  font-family: Arial, sans-serif;
 }
 
 /* SNAP CONTAINER */
 
 .container {
-  height: 100vh;
-  height: 100svh;
 
-  overflow-y: scroll;
+  height: calc(var(--vh) * 100);
+
+  overflow-y: auto;
 
   scroll-snap-type: y mandatory;
+
   scroll-behavior: smooth;
 
   -webkit-overflow-scrolling: touch;
 }
 
-/* EACH PANEL */
+/* PANELS */
 
 .panel {
-  min-height: 100vh;
-  min-height: 100svh;
+
+  position: relative;
 
   width: 100%;
+
+  height: calc(var(--vh) * 100);
 
   scroll-snap-align: start;
 
@@ -62,100 +73,68 @@ body {
   justify-content: center;
   align-items: center;
 
-  position: relative;
-
-  padding: 5vw;
+  padding: 24px;
 
   overflow: hidden;
 }
 
-/* BACKGROUND COLORS */
+/* COLORS */
 
 .dark {
   background: #000;
+  color: white;
 }
 
 .light {
-  background: #f4f4f4;
+  background: #f2f2f2;
   color: #111;
 }
 
 .blue {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-}
-
-.purple {
-  background: linear-gradient(135deg, #1e1b4b, #6d28d9);
+  background: linear-gradient(135deg, #0f172a, #2563eb);
+  color: white;
 }
 
 /* TEXT */
 
 h1 {
-  font-size: clamp(2rem, 6vw, 5rem);
-  margin-bottom: 20px;
+
+  font-size: clamp(2rem, 8vw, 5rem);
+
   text-align: center;
+
+  margin-bottom: 20px;
 }
 
 p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
 
-  max-width: 900px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
 
   line-height: 1.6;
 
+  max-width: 800px;
+
   text-align: center;
 }
 
-/* VIDEO */
+/* MEDIA */
 
+img,
 video {
-  width: min(92vw, 500px);
 
-  max-height: 80svh;
+  width: min(100%, 900px);
 
-  border-radius: 24px;
-
-  object-fit: cover;
-
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-}
-
-/* IMAGE */
-
-img {
-  width: min(92vw, 800px);
-
-  max-height: 80svh;
-
-  border-radius: 24px;
+  max-height: 75vh;
 
   object-fit: contain;
 
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  border-radius: 20px;
 }
 
-/* OVERLAY TEXT FOR FULLSCREEN VIDEO */
-
-.overlay {
-  position: absolute;
-
-  bottom: 10%;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 90%;
-
-  text-align: center;
-
-  z-index: 2;
-
-  text-shadow: 0 2px 20px rgba(0,0,0,0.7);
-}
-
-/* FULLSCREEN VIDEO SECTION */
+/* FULLSCREEN VIDEO */
 
 .fullscreen-video video {
+
   position: absolute;
 
   inset: 0;
@@ -165,67 +144,57 @@ img {
 
   object-fit: cover;
 
-  border-radius: 0;
-
   z-index: 1;
 }
 
-/* DARK OVERLAY */
+/* DARK VIDEO OVERLAY */
 
 .fullscreen-video::after {
+
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background: rgba(0,0,0,0.35);
 
-  z-index: 1;
+  z-index: 2;
 }
 
-/* SCROLL INDICATOR */
+/* CONTENT ABOVE VIDEO */
 
-.scroll-indicator {
-  position: absolute;
+.overlay {
 
-  bottom: 20px;
+  position: relative;
 
-  font-size: 0.9rem;
+  z-index: 3;
 
-  opacity: 0.7;
-
-  animation: bounce 2s infinite;
+  padding: 20px;
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-10px);
-  }
-
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* MOBILE OPTIMIZATION */
+/* MOBILE FIXES */
 
 @media (max-width: 768px) {
 
   .panel {
-    padding: 24px;
+    padding: 18px;
   }
 
-  video,
-  img {
-    width: 100%;
+  h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
   }
 
   p {
     font-size: 1rem;
+  }
+
+  img,
+  video {
+
+    width: 100%;
+
+    max-height: 65vh;
   }
 
 }
@@ -238,6 +207,7 @@ img {
 <div class="container">
 
   <!-- PANEL 1 -->
+
   <section class="panel fullscreen-video dark">
 
     <video
@@ -250,76 +220,63 @@ img {
     </video>
 
     <div class="overlay">
-      <h1>Your Story Starts Here</h1>
+
+      <h1>Snap Scroll</h1>
 
       <p>
-        A modern snap-scroll multimedia experience.
+        Properly responsive on mobile and desktop.
       </p>
-    </div>
 
-    <div class="scroll-indicator">
-      ↓ Scroll ↓
     </div>
 
   </section>
 
   <!-- PANEL 2 -->
+
   <section class="panel light">
 
-    <h1>Text Section</h1>
+    <h1>Text Panel</h1>
 
     <p>
-      This section automatically adapts to desktop,
-      tablet, and mobile screens using responsive sizing,
-      viewport units, and flexible layouts.
+      This section scales automatically using dynamic viewport sizing.
     </p>
 
   </section>
 
   <!-- PANEL 3 -->
+
   <section class="panel blue">
 
-    <h1>Image Showcase</h1>
+    <h1>Image Panel</h1>
 
     <img
       src="media/image1.jpg"
-      alt="Example image"
+      alt="Example"
     >
-
-  </section>
-
-  <!-- PANEL 4 -->
-  <section class="panel purple">
-
-    <h1>Embedded Video</h1>
-
-    <video
-      controls
-      autoplay
-      muted
-      loop
-      playsinline
-    >
-      <source src="media/video2.mp4" type="video/mp4">
-    </video>
-
-  </section>
-
-  <!-- PANEL 5 -->
-  <section class="panel dark">
-
-    <h1>Final Panel</h1>
-
-    <p>
-      You can duplicate panels infinitely to build:
-      portfolios, visual essays, music releases,
-      documentaries, landing pages, interactive stories,
-      or TikTok-style experiences.
-    </p>
 
   </section>
 
 </div>
+
+<!-- MOBILE HEIGHT FIX -->
+
+<script>
+
+function setVH() {
+
+  let vh = window.innerHeight * 0.01;
+
+  document.documentElement.style.setProperty(
+    '--vh',
+    `${vh}px`
+  );
+}
+
+setVH();
+
+window.addEventListener('resize', setVH);
+
+</script>
 
 </body>
 </html>
