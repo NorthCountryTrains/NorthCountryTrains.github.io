@@ -359,21 +359,9 @@ video {
 
     <div class="content">
 
-      <p1> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </p1>
+      <h2> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </h2>
 
-      <div class="media-wrapper">
-
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-        >
-          <source src="media/video1.mp4" type="video/mp4">
-        </video>
-
-      </div>
+     
 
     </div>
 
@@ -409,6 +397,20 @@ video {
           src="CP_9760_South_Willsboro.jpg"
           alt="Example"
         >
+
+      </div>
+
+       <div class="media-wrapper">
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        >
+          <source src="media/video1.mp4" type="video/mp4">
+        </video>
 
       </div>
 
