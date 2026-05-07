@@ -130,6 +130,8 @@ body {
   overflow: hidden;
 }
 
+  
+
 /* CONTENT */
 
 .content {
@@ -138,6 +140,7 @@ body {
   max-width: 700px;
 
   height: 100%;
+  overflow-y: auto;
 
   padding: 20px;
 
@@ -149,6 +152,9 @@ body {
   gap: 16px;
 
   overflow: hidden;
+  justify-content: flex-start;
+
+  
 }
 
 /* ALL TEXT */
