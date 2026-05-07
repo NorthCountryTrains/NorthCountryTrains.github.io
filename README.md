@@ -222,7 +222,7 @@ video {
 
   .image-background {
 
-  background-image: url("media/background.jpg");
+  background-image: url("CP_9760_South_Willsboro.jpg");
 
   background-size: cover;
 
@@ -278,7 +278,7 @@ video {
 
   <!-- PANEL 1 -->
 
-  <section class="panel dark">
+ <section class="panel image-background">
 
     <div class="content">
 
