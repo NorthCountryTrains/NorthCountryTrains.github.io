@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -7,7 +8,7 @@
   content="width=device-width, initial-scale=1.0"
 />
 
-<title>Correct Responsive Snap Scroll</title>
+<title>Fullscreen Snap Experience</title>
 
 <style>
 
@@ -32,7 +33,65 @@ body {
   background: black;
 }
 
-/* CONTAINER */
+/* INTRO SCREEN */
+
+.intro {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: #000;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 24px;
+
+  z-index: 1000;
+
+  transition: opacity 0.5s ease;
+}
+
+.intro.hidden {
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+/* BUTTON */
+
+.enter-button {
+
+  padding: 16px 32px;
+
+  font-size: 1rem;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: white;
+
+  color: black;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.enter-button:hover {
+
+  transform: scale(1.05);
+}
+
+/* SNAP CONTAINER */
 
 .container {
 
@@ -44,6 +103,15 @@ body {
   scroll-snap-type: y mandatory;
 
   scroll-behavior: smooth;
+
+  display: none;
+}
+
+/* ACTIVE STATE */
+
+.container.active {
+
+  display: block;
 }
 
 /* PANELS */
@@ -56,61 +124,70 @@ body {
   scroll-snap-align: start;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
 
   padding: 20px;
 }
 
-/* INNER CONTENT WRAPPER */
+/* CONTENT */
 
 .content {
 
   width: 100%;
-
   max-width: 700px;
+
+  height: 100%;
 
   display: flex;
   flex-direction: column;
 
   align-items: center;
 
-  gap: 24px;
-}
-
-/* COLORS */
-
-.dark {
-  background: #000;
-  color: white;
-}
-
-.light {
-  background: #f5f5f5;
-  color: #111;
-}
-
-.blue {
-  background: #1d4ed8;
-  color: white;
+  gap: 16px;
 }
 
 /* TEXT */
 
 h1 {
 
+  flex-shrink: 0;
+
   font-size: clamp(2rem, 5vw, 4rem);
 
   text-align: center;
+
+  color: white;
 }
 
 p {
+
+  flex-shrink: 0;
 
   font-size: clamp(1rem, 2vw, 1.3rem);
 
   line-height: 1.5;
 
   text-align: center;
+
+  color: white;
+}
+
+/* MEDIA AREA */
+
+.media-wrapper {
+
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
 }
 
 /* MEDIA */
@@ -122,30 +199,35 @@ video {
 
   max-width: 500px;
 
-  max-height: 60vh;
+  max-height: 100%;
 
   object-fit: contain;
 
-  border-radius: 16px;
+  border-radius: 20px;
+}
 
-  display: block;
+/* PANEL COLORS */
+
+.dark {
+  background: #000;
+}
+
+.blue {
+  background: #1d4ed8;
+}
+
+.purple {
+  background: #6d28d9;
 }
 
 /* MOBILE */
 
 @media (max-width: 768px) {
 
-  .content {
-
-    max-width: 100%;
-  }
-
   img,
   video {
 
     max-width: 100%;
-
-    max-height: 50vh;
   }
 
   h1 {
@@ -164,7 +246,24 @@ video {
 
 <body>
 
-<div class="container">
+<!-- INTRO SCREEN -->
+
+<div class="intro" id="intro">
+
+  <h1>Welcome</h1>
+
+  <button
+    class="enter-button"
+    id="enterButton"
+  >
+    Enter Experience
+  </button>
+
+</div>
+
+<!-- SNAP EXPERIENCE -->
+
+<div class="container" id="container">
 
   <!-- PANEL 1 -->
 
@@ -172,21 +271,21 @@ video {
 
     <div class="content">
 
-      <h1>Responsive Video</h1>
+      <h1>Snap Scroll Video</h1>
 
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        controls
-      >
-        <source src="media/video1.mp4" type="video/mp4">
-      </video>
+      <div class="media-wrapper">
 
-      <p>
-        Properly scaled for desktop and mobile.
-      </p>
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        >
+          <source src="media/video1.mp4" type="video/mp4">
+        </video>
+
+      </div>
 
     </div>
 
@@ -194,15 +293,14 @@ video {
 
   <!-- PANEL 2 -->
 
-  <section class="panel light">
+  <section class="panel blue">
 
     <div class="content">
 
-      <h1>Text Section</h1>
+      <h1>Responsive Text</h1>
 
       <p>
-        This content stays readable and centered
-        instead of stretching too large.
+        This section perfectly fits desktop and mobile.
       </p>
 
     </div>
@@ -211,22 +309,48 @@ video {
 
   <!-- PANEL 3 -->
 
-  <section class="panel blue">
+  <section class="panel purple">
 
     <div class="content">
 
       <h1>Responsive Image</h1>
 
-      <img
-        src="media/image1.jpg"
-        alt="Example image"
-      >
+      <div class="media-wrapper">
+
+        <img
+          src="media/image1.jpg"
+          alt="Example"
+        >
+
+      </div>
 
     </div>
 
   </section>
 
 </div>
+
+<script>
+
+/* BUTTON */
+
+const button = document.getElementById("enterButton");
+
+const intro = document.getElementById("intro");
+
+const container = document.getElementById("container");
+
+/* OPEN EXPERIENCE */
+
+button.addEventListener("click", () => {
+
+  intro.classList.add("hidden");
+
+  container.classList.add("active");
+
+});
+
+</script>
 
 </body>
 </html>
