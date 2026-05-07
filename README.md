@@ -221,6 +221,8 @@ p {
 
   line-height: 1.5;
 
+  font-family: "Times New Roman", Times, serif;
+
   max-width: min(90vw, 34ch);
 
   text-wrap: pretty;
