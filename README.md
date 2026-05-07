@@ -217,7 +217,7 @@ h2 {
 
 p {
 
-  -size: clamp(1.35rem, 2.2vw, 1.6rem);
+  -size: clamp(1.35rem, 4vw, 1.6rem);
 
   line-height: 1.5;
 
