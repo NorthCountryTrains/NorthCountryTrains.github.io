@@ -151,34 +151,92 @@ body {
   overflow: hidden;
 }
 
-/* TEXT */
+/* ALL TEXT */
+
+h1,
+h2,
+h3,
+p,
+span,
+div {
+
+  color: white;
+
+  text-align: center;
+
+  word-wrap: break-word;
+
+  overflow-wrap: break-word;
+}
 
 /* HEADINGS */
 
 h1 {
 
-  font-size: clamp(1.8rem, 5vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4.5rem);
 
-  line-height: 1.1;
+  line-height: 1.05;
 
-  text-align: center;
+  font-weight: 700;
 
-  max-width: 12ch;
+  max-width: 90vw;
+
+  text-wrap: balance;
+
+  margin-bottom: 12px;
+}
+
+/* SUBHEADINGS */
+
+h2 {
+
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+
+  line-height: 1.15;
+
+  max-width: 85vw;
+
+  text-wrap: balance;
 }
 
 /* PARAGRAPHS */
 
 p {
 
-  font-size: clamp(0.95rem, 2vw, 1.3rem);
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
 
   line-height: 1.5;
 
-  text-align: center;
+  max-width: min(90vw, 34ch);
 
-  max-width: 32ch;
+  text-wrap: pretty;
 }
 
+/* MOBILE FIXES */
+
+@media (max-width: 768px) {
+
+  h1 {
+
+    font-size: clamp(1.8rem, 8vw, 3rem);
+
+    max-width: 95vw;
+  }
+
+  h2 {
+
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+
+  p {
+
+    font-size: 1rem;
+
+    line-height: 1.45;
+
+    max-width: 92vw;
+  }
+}
 /* MEDIA AREA */
 
 .media-wrapper {
@@ -301,8 +359,7 @@ video {
 
     <div class="content">
 
-      <h1>I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. 
-</h1>
+      <p1> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </p1>
 
       <div class="media-wrapper">
 
