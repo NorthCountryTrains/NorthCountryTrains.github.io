@@ -95,7 +95,7 @@ body {
 .container {
 
   width: 100%;
-  height: 100dvh;
+  height: calc(100dvh - 60px);
 
   overflow-y: scroll;
 
@@ -118,7 +118,7 @@ body {
 .panel {
 
   width: 100%;
-  height: 100dvh;
+  height: calc(100dvh - 60px);
 
   scroll-snap-align: start;
 
