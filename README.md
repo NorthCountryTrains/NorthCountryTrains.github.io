@@ -140,6 +140,7 @@ body {
   max-width: 700px;
 
   height: 100%;
+  max-height: 100%;
   overflow-y: auto;
 
   padding: 20px;
