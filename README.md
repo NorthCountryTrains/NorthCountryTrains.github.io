@@ -358,7 +358,9 @@ video {
  <section class="panel image-background">
 
     <div class="content">
-     <h1> Legends of Lightning Along Lake Champlain. </h1>
+     <h1> Legends of Lightning Along Lake Champlain
+     By Harrison Smith </h1>
+     
 
 
 
