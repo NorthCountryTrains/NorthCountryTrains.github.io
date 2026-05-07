@@ -309,6 +309,7 @@ video {
 }
 
   .content {
+     min-height: 0;
 
   position: relative;
 
