@@ -271,7 +271,8 @@ video {
 
     <div class="content">
 
-      <h1>Snap Scroll Video</h1>
+      <h1>I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. 
+</h1>
 
       <div class="media-wrapper">
 
