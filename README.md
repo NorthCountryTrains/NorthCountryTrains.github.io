@@ -226,7 +226,7 @@ video {
 
   background-size: cover;
 
-  background-position: center;
+  background-position: left;
 
   background-repeat: no-repeat;
 }
