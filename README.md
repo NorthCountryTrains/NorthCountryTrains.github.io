@@ -345,7 +345,7 @@ video {
     class="enter-button"
     id="enterButton"
   >
-    Enter Experience
+    Legends of Lightning
   </button>
 
 </div>
