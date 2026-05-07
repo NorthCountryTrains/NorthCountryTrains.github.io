@@ -192,25 +192,14 @@ h1 {
 
 h2 {
 
-  color: white;
-
   font-size: clamp(1.2rem, 4vw, 2.8rem);
-
-  line-height: 1.15;
-
-  text-align: center;
 
   max-width: min(90vw, 18ch);
 
-  margin: 0 auto;
-
-  overflow-wrap: break-word;
-
-  word-break: break-word;
+  line-height: 1.15;
 
   text-wrap: balance;
 }
-
 /* PARAGRAPHS */
 
 p {
