@@ -192,11 +192,17 @@ h1 {
 
 h2 {
 
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: white;
 
-  max-width: min(90vw, 30ch);
+  font-size: clamp(0.9rem, 2.2vw, 1.6rem);
 
-  line-height: 1.15;
+  line-height: 1.1;
+
+  text-align: center;
+
+  max-width: min(90vw, 20ch);
+
+  margin: 0 auto;
 
   text-wrap: balance;
 }
@@ -226,7 +232,7 @@ p {
 
   h2 {
 
-   font-size: clamp(1rem, 2vw, 1.4rem);
+   font-size: clamp(0.9rem, 2.2vw, 1.6rem);
   }
 
   p {
