@@ -358,6 +358,9 @@ video {
  <section class="panel image-background">
 
     <div class="content">
+     <h1> Legends of Lightning Along Lake Champlain. </h1>
+
+
 
       <h2> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </h2>
 
