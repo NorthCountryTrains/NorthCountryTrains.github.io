@@ -1,16 +1,16 @@
 # NorthCountryTrains.github.io
 
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  content="width=device-width, initial-scale=1.0"
 />
 
-<title>Responsive Snap Scroll</title>
+<title>Correct Responsive Snap Scroll</title>
 
 <style>
 
@@ -22,60 +22,63 @@
   box-sizing: border-box;
 }
 
-/* DYNAMIC MOBILE HEIGHT */
-
-:root {
-  --vh: 1vh;
-}
-
-/* PAGE */
-
 html,
 body {
+
   width: 100%;
   height: 100%;
+
   overflow: hidden;
 
-  background: black;
   font-family: Arial, sans-serif;
+
+  background: black;
 }
 
-/* SNAP CONTAINER */
+/* CONTAINER */
 
 .container {
 
-  height: calc(var(--vh) * 100);
+  width: 100%;
+  height: 100vh;
 
-  overflow-y: auto;
+  overflow-y: scroll;
 
   scroll-snap-type: y mandatory;
 
   scroll-behavior: smooth;
-
-  -webkit-overflow-scrolling: touch;
 }
 
 /* PANELS */
 
 .panel {
 
-  position: relative;
-
   width: 100%;
-
-  height: calc(var(--vh) * 100);
+  height: 100vh;
 
   scroll-snap-align: start;
 
   display: flex;
-  flex-direction: column;
-
   justify-content: center;
   align-items: center;
 
-  padding: 24px;
+  padding: 20px;
+}
 
-  overflow: hidden;
+/* INNER CONTENT WRAPPER */
+
+.content {
+
+  width: 100%;
+
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 24px;
 }
 
 /* COLORS */
@@ -86,12 +89,12 @@ body {
 }
 
 .light {
-  background: #f2f2f2;
+  background: #f5f5f5;
   color: #111;
 }
 
 .blue {
-  background: linear-gradient(135deg, #0f172a, #2563eb);
+  background: #1d4ed8;
   color: white;
 }
 
@@ -99,20 +102,16 @@ body {
 
 h1 {
 
-  font-size: clamp(2rem, 8vw, 5rem);
+  font-size: clamp(2rem, 5vw, 4rem);
 
   text-align: center;
-
-  margin-bottom: 20px;
 }
 
 p {
 
-  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.3rem);
 
-  line-height: 1.6;
-
-  max-width: 800px;
+  line-height: 1.5;
 
   text-align: center;
 }
@@ -122,81 +121,45 @@ p {
 img,
 video {
 
-  width: min(100%, 900px);
+  width: 100%;
 
-  max-height: 75vh;
+  max-width: 500px;
+
+  max-height: 60vh;
 
   object-fit: contain;
 
-  border-radius: 20px;
+  border-radius: 16px;
+
+  display: block;
 }
 
-/* FULLSCREEN VIDEO */
-
-.fullscreen-video video {
-
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  z-index: 1;
-}
-
-/* DARK VIDEO OVERLAY */
-
-.fullscreen-video::after {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0,0,0,0.35);
-
-  z-index: 2;
-}
-
-/* CONTENT ABOVE VIDEO */
-
-.overlay {
-
-  position: relative;
-
-  z-index: 3;
-
-  padding: 20px;
-}
-
-/* MOBILE FIXES */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
-  .panel {
-    padding: 18px;
-  }
+  .content {
 
-  h1 {
-    font-size: clamp(2rem, 10vw, 4rem);
-  }
-
-  p {
-    font-size: 1rem;
+    max-width: 100%;
   }
 
   img,
   video {
 
-    width: 100%;
+    max-width: 100%;
 
-    max-height: 65vh;
+    max-height: 50vh;
   }
 
+  h1 {
+
+    font-size: 2rem;
+  }
+
+  p {
+
+    font-size: 1rem;
+  }
 }
 
 </style>
@@ -208,23 +171,24 @@ video {
 
   <!-- PANEL 1 -->
 
-  <section class="panel fullscreen-video dark">
+  <section class="panel dark">
 
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-    >
-      <source src="media/video1.mp4" type="video/mp4">
-    </video>
+    <div class="content">
 
-    <div class="overlay">
+      <h1>Responsive Video</h1>
 
-      <h1>Snap Scroll</h1>
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+      >
+        <source src="media/video1.mp4" type="video/mp4">
+      </video>
 
       <p>
-        Properly responsive on mobile and desktop.
+        Properly scaled for desktop and mobile.
       </p>
 
     </div>
@@ -235,11 +199,16 @@ video {
 
   <section class="panel light">
 
-    <h1>Text Panel</h1>
+    <div class="content">
 
-    <p>
-      This section scales automatically using dynamic viewport sizing.
-    </p>
+      <h1>Text Section</h1>
+
+      <p>
+        This content stays readable and centered
+        instead of stretching too large.
+      </p>
+
+    </div>
 
   </section>
 
@@ -247,36 +216,20 @@ video {
 
   <section class="panel blue">
 
-    <h1>Image Panel</h1>
+    <div class="content">
 
-    <img
-      src="media/image1.jpg"
-      alt="Example"
-    >
+      <h1>Responsive Image</h1>
+
+      <img
+        src="media/image1.jpg"
+        alt="Example image"
+      >
+
+    </div>
 
   </section>
 
 </div>
-
-<!-- MOBILE HEIGHT FIX -->
-
-<script>
-
-function setVH() {
-
-  let vh = window.innerHeight * 0.01;
-
-  document.documentElement.style.setProperty(
-    '--vh',
-    `${vh}px`
-  );
-}
-
-setVH();
-
-window.addEventListener('resize', setVH);
-
-</script>
 
 </body>
 </html>
