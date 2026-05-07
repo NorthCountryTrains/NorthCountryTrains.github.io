@@ -378,7 +378,7 @@ video {
 
 
 
-      <h2> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </h2>
+      <p1> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </p1>
 
      
 
