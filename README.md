@@ -154,28 +154,30 @@ body {
 
 /* TEXT */
 
+/* HEADINGS */
+
 h1 {
 
-  flex-shrink: 0;
+  font-size: clamp(1.8rem, 5vw, 4rem);
 
-  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
 
   text-align: center;
 
-  color: white;
+  max-width: 12ch;
 }
+
+/* PARAGRAPHS */
 
 p {
 
-  flex-shrink: 0;
-
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(0.95rem, 2vw, 1.3rem);
 
   line-height: 1.5;
 
   text-align: center;
 
-  color: white;
+  max-width: 32ch;
 }
 
 /* MEDIA AREA */
