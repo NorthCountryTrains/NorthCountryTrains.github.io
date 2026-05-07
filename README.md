@@ -231,6 +231,24 @@ video {
   background-repeat: no-repeat;
 }
 
+  .image-background::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.4);
+}
+
+  .content {
+
+  position: relative;
+
+  z-index: 2;
+}
+
 /* MOBILE */
 
 @media (max-width: 768px) {
