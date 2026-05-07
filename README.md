@@ -114,7 +114,7 @@ body {
   display: block;
 }
 
-/* PANELS */
+/* PANEL */
 
 .panel {
 
@@ -128,7 +128,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding: 20px;
+  overflow: hidden;
 }
 
 /* CONTENT */
@@ -140,12 +140,16 @@ body {
 
   height: 100%;
 
+  padding: 20px;
+
   display: flex;
   flex-direction: column;
 
   align-items: center;
 
   gap: 16px;
+
+  overflow: hidden;
 }
 
 /* TEXT */
@@ -180,32 +184,28 @@ p {
 
   flex: 1;
 
-  width: 100%;
-
   min-height: 0;
+
+  width: 100%;
 
   display: flex;
 
   justify-content: center;
   align-items: center;
-}
 
+  overflow: hidden;
+}
 /* MEDIA */
 
 img,
 video {
 
-  width: 100%;
-
-  max-width: 500px;
+  max-width: 100%;
 
   max-height: 100%;
 
   object-fit: contain;
-
-  border-radius: 20px;
 }
-
 /* PANEL COLORS */
 
 .dark {
