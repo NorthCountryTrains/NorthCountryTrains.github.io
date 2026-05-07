@@ -220,6 +220,17 @@ video {
   background: #6d28d9;
 }
 
+  .image-background {
+
+  background-image: url("media/background.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
 /* MOBILE */
 
 @media (max-width: 768px) {
