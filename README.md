@@ -27,7 +27,7 @@ body {
 
   overflow: hidden;
 
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 
   background: black;
 }
@@ -70,7 +70,7 @@ body {
 
   padding: 16px 32px;
 
-  font-size: 1rem;
+  -size: 1rem;
 
   border: none;
 
@@ -180,11 +180,11 @@ div {
 
 h1 {
 
-  font-size: clamp(2rem, 6vw, 4.5rem);
+  -size: clamp(2rem, 6vw, 4.5rem);
 
   line-height: 1.05;
 
-  font-weight: 700;
+  -weight: 700;
 
   max-width: 90vw;
 
@@ -201,7 +201,7 @@ h2 {
 
   color: white;
 
-  font-size: min(3vw, 14px);
+  -size: min(3vw, 14px);
 
   line-height: 1.1;
 
@@ -217,7 +217,7 @@ h2 {
 
 p {
 
-  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  -size: clamp(1rem, 2.2vw, 1.35rem);
 
   line-height: 1.5;
 
@@ -380,7 +380,7 @@ video {
 
 
 
-      <p1> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </p1>
+      <p> I pause my rapid, rocky ascent for a moment, standing perfectly still to listen for any warning sounds of my quarry approaching. Part of me knows that listening is all but pointless; the snow dampens any sound that these surprisingly stealthy beasts make as they rumble up and down Lake Champlain. </p>
 
      
 
