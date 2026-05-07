@@ -194,7 +194,7 @@ h2 {
 
   color: white;
 
-  font-size: clamp(0.5rem, 2.2vw, 1.6rem);
+  font-size: min(3vw, 14px);
 
   line-height: 1.1;
 
@@ -232,7 +232,7 @@ p {
 
   h2 {
 
-   font-size: clamp(0.5rem, 2.2vw, 1.6rem);
+   font-size: min(3vw, 14px);
   }
 
   p {
